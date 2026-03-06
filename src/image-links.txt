@@ -1,0 +1,22 @@
+Job Portal Project – Image Links Used
+
+Logo:
+https://assets.ccbp.in/frontend/react-js/logo-img.png
+
+Failure View:
+https://assets.ccbp.in/frontend/react-js/failure-img.png
+
+No Jobs View:
+https://assets.ccbp.in/frontend/react-js/no-jobs-img.png
+
+Not Found:
+https://assets.ccbp.in/frontend/react-js/jobby-app-not-found-img.png
+
+Home Background (Small):
+https://assets.ccbp.in/frontend/react-js/home-sm-bg.png
+
+Home Background (Large):
+https://assets.ccbp.in/frontend/react-js/home-lg-bg.png
+
+Profile Background:
+https://assets.ccbp.in/frontend/react-js/profile-bg.png

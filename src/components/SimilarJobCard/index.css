@@ -1,0 +1,33 @@
+.similar-job-card {
+  background-color: #202020;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 300px;
+  list-style-type: none;
+}
+
+.similar-header {
+  display: flex;
+  align-items: center;
+}
+
+.similar-logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.similar-title {
+  font-size: 16px;
+}
+
+.description-heading {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.similar-footer {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
