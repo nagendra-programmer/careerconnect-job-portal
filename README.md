@@ -1,5 +1,15 @@
 # CareerConnect Job Portal
 
+![React](https://img.shields.io/badge/React-JS-61DAFB?logo=react&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?logo=vercel)
+![Status](https://img.shields.io/badge/Status-Live-success)
+
+## Live Demo
+
+[View Live Application](https://careerconnect-job-portal.vercel.app)
+
+---
+
 CareerConnect is a **React-based job portal application** where users can explore job opportunities, view job details, and filter jobs based on employment type and salary range.
 
 The application provides authentication, protected routes, and job search functionality to simulate a real-world job portal experience.
@@ -8,10 +18,8 @@ The application provides authentication, protected routes, and job search functi
 
 ## Demo Credentials
 
-Use the following credentials to log in:
-
-Username: rahul
-Password: rahul@2021
+Username: `rahul`  
+Password: `rahul@2021`
 
 Note: The project uses predefined credentials because it integrates with a mock authentication API.
 
@@ -35,23 +43,20 @@ Note: The project uses predefined credentials because it integrates with a mock 
 
 ## Tech Stack
 
-Frontend
+### Frontend
+- React.js
+- JavaScript (ES6+)
+- CSS3
 
-* React.js
-* JavaScript (ES6+)
-* CSS3
+### Libraries
+- React Router
+- js-cookie
+- React Icons
 
-Libraries
-
-* React Router
-* js-cookie
-* React Icons
-
-Tools
-
-* Git
-* GitHub
-* VS Code
+### Tools
+- Git
+- GitHub
+- VS Code
 
 ---
 
@@ -147,9 +152,9 @@ http://localhost:3000
 
 ## Author
 
-Nagendra
+**Nagendra Katta**
 
-GitHub:
+GitHub:  
 https://github.com/nagendra-programmer
 
 
