@@ -63,3 +63,16 @@
   margin-top: 8px;
 }
 
+.demo-credentials {
+  background-color: #f1f5f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.demo-btn {
+  margin-top: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}

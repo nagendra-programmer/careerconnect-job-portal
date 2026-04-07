@@ -1,7 +1,10 @@
 # CareerConnect Job Portal
 
 ![React](https://img.shields.io/badge/React-JS-61DAFB?logo=react&logoColor=white)
-![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?logo=vercel)
+![Node](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js&logoColor=white)
+![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=white)
+![Render](https://img.shields.io/badge/Backend-Render-46E3B7?logo=render&logoColor=black)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
 ![Status](https://img.shields.io/badge/Status-Live-success)
 
 ## Live Demo
@@ -10,6 +13,8 @@
 
 ---
 
+
+
 CareerConnect is a full-stack job portal application where users can explore job opportunities, save jobs, and apply to them seamlessly.
 
 Unlike traditional demo projects, this application uses custom-built backend APIs instead of third-party APIs, providing a real-world product experience.
@@ -17,6 +22,17 @@ Unlike traditional demo projects, this application uses custom-built backend API
 It includes authentication, protected routes, dynamic job filtering, and complete job management features.
 
 ---
+
+# 🧪 Demo Credentials
+
+You can either register a new account or use the demo credentials below:
+
+- **Username:** guru  
+- **Password:** 123456789
+
+---
+
+⚠️ Note: This project is hosted on free services (Render), so the backend may take 30–60 seconds to respond on the first request due to cold start.
 
 ## 🚀 Key Highlights
 
