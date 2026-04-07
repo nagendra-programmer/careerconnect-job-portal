@@ -1,126 +1,3 @@
-// import {Component} from 'react'
-// import {Redirect} from 'react-router-dom'
-// import Cookies from 'js-cookie'
-
-// import './index.css'
-
-// class Login extends Component {
-//   state = {
-//     username: '',
-//     password: '',
-//     showError: false,
-//     errorMsg: '',
-//   }
-
-//   onChangeUsername = event => {
-//     this.setState({username: event.target.value})
-//   }
-
-//   onChangePassword = event => {
-//     this.setState({password: event.target.value})
-//   }
-
-//   onSubmitSuccess = jwtToken => {
-//     const {history} = this.props
-
-//     Cookies.set('jwt_token', jwtToken, {expires: 30})
-//     history.replace('/')
-//   }
-
-//   onSubmitFailure = errorMsg => {
-//     this.setState({showError: true, errorMsg})
-//   }
-
-//   onSubmitForm = async event => {
-//     event.preventDefault()
-
-//     const {username, password} = this.state
-//     const userDetails = {username, password}
-
-//     const url="https://careerconnect-backend-gx9j.onrender.com/auth/login"; 
-//     const options = {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(userDetails),
-//     }
-//     const response = await fetch(url, options)
-//     const data = await response.json()
-
-//     if (response.ok === true) {
-      
-//       this.onSubmitSuccess(data.jwt_token)
-//     } else {
-//       this.onSubmitFailure(data.err_msg)
-//     }
-//   }
-
-//   onRegister=()=>{
-//     const {history}=this.props 
-//     history.push('/register'); 
-//   }
-
-//   render() {
-//     const {username, password, showError, errorMsg} = this.state
-
-//     const jwtToken = Cookies.get('jwt_token')
-//     if (jwtToken !== undefined) {
-//       return <Redirect to="/" />
-//     }
-
-//     return (
-//       <div className="login-container">
-//         <form className="login-form" onSubmit={this.onSubmitForm}>
-//           <img
-//             src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-//             alt="website logo"
-//             className="login-logo"
-//           />
-
-//           <label className="label" htmlFor="username">
-//             USERNAME
-//           </label>
-//           <input
-//             id="username"
-//             type="text"
-//             value={username}
-//             onChange={this.onChangeUsername}
-//             className="input"
-//             placeholder="Username"
-//           />
-
-//           <label className="label" htmlFor="password">
-//             PASSWORD
-//           </label>
-//           <input
-//             id="password"
-//             type="password"
-//             value={password}
-//             onChange={this.onChangePassword}
-//             className="input"
-//             placeholder="Password"
-//           />
-
-//           <button type="submit" className="login-button">
-//             Login
-//           </button>
-
-          
-//             <button type="button" className="login-button" onClick={this.onRegister}>
-//               Register
-//             </button>
-         
-          
-//           {showError && <p className="error-msg">*{errorMsg}</p>}
-//         </form>
-//       </div>
-//     )
-//   }
-// }
-
-// export default Login
-
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
@@ -133,6 +10,7 @@ class Login extends Component {
     password: '',
     showError: false,
     errorMsg: '',
+    isLoading: false,
   }
 
   onChangeUsername = event => {
@@ -143,7 +21,6 @@ class Login extends Component {
     this.setState({password: event.target.value})
   }
 
-  //  Demo credentials autofill
   useDemoCredentials = () => {
     this.setState({
       username: 'guru',
@@ -155,7 +32,6 @@ class Login extends Component {
 
   onSubmitSuccess = jwtToken => {
     const {history} = this.props
-
     Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
   }
@@ -166,32 +42,35 @@ class Login extends Component {
 
   onSubmitForm = async event => {
     event.preventDefault()
+    this.setState({isLoading: true})
 
     const {username, password} = this.state
-    const userDetails = {username, password}
-
-    const url = "https://careerconnect-backend-gx9j.onrender.com/auth/login"
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(userDetails),
-    }
 
     try {
-      const response = await fetch(url, options)
+      const response = await fetch(
+        "https://careerconnect-backend-gx9j.onrender.com/auth/login",
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({username, password}),
+        }
+      )
+
       const data = await response.json()
 
-      if (response.ok === true) {
+      if (response.ok) {
         this.onSubmitSuccess(data.jwt_token)
       } else {
         this.onSubmitFailure(data.err_msg)
+        this.setState({isLoading: false})
       }
     } catch (error) {
       this.setState({
         showError: true,
-        errorMsg: "Server is waking up... please try again in a few seconds",
+        errorMsg: "Server is waking up... please try again",
+        isLoading: false,
       })
     }
   }
@@ -202,74 +81,76 @@ class Login extends Component {
   }
 
   render() {
-    const {username, password, showError, errorMsg} = this.state
-
+    const {username, password, showError, errorMsg, isLoading} = this.state
     const jwtToken = Cookies.get('jwt_token')
+
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
 
     return (
-      <div className="login-container">
-        <form className="login-form" onSubmit={this.onSubmitForm}>
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-            alt="website logo"
-            className="login-logo"
-          />
+      <div className="login-page">
 
-          {/* ✅ DEMO CREDENTIALS UI */}
-          <div className="demo-credentials">
-            <p><strong>Demo Login</strong></p>
-            <p>Username: guru</p>
-            <p>Password: 123456789</p>
-            <button
-              type="button"
-              className="demo-btn"
-              onClick={this.useDemoCredentials}
-            >
-              Use Demo Credentials
-            </button>
-          </div>
-
-          <label className="label" htmlFor="username">
-            USERNAME
-          </label>
-          <input
-            id="username"
-            type="text"
-            value={username}
-            onChange={this.onChangeUsername}
-            className="input"
-            placeholder="Username"
-          />
-
-          <label className="label" htmlFor="password">
-            PASSWORD
-          </label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={this.onChangePassword}
-            className="input"
-            placeholder="Password"
-          />
-
-          <button type="submit" className="login-button">
-            Login
-          </button>
-
+        {/* 🔹 DEMO CARD */}
+        <div className="demo-card">
+          <h3>Demo Credentials</h3>
+          <p><strong>Username:</strong> guru</p>
+          <p><strong>Password:</strong> 123456789</p>
           <button
             type="button"
-            className="login-button"
-            onClick={this.onRegister}
+            className="demo-btn"
+            onClick={this.useDemoCredentials}
           >
-            Register
+            Use Demo Login
           </button>
+        </div>
 
-          {showError && <p className="error-msg">*{errorMsg}</p>}
-        </form>
+        {/* 🔹 LOGIN CARD */}
+        <div className="login-container">
+          <form className="login-form" onSubmit={this.onSubmitForm}>
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+              alt="website logo"
+              className="login-logo"
+            />
+
+            <label className="label">USERNAME</label>
+            <input
+              type="text"
+              value={username}
+              onChange={this.onChangeUsername}
+              className="input"
+            />
+
+            <label className="label">PASSWORD</label>
+            <input
+              type="password"
+              value={password}
+              onChange={this.onChangePassword}
+              className="input"
+            />
+
+            <button
+              type="submit"
+              className="login-button"
+              disabled={isLoading}
+            >
+              {isLoading ? "Loading..." : "Login"}
+            </button>
+
+            <button
+              type="button"
+              className="login-button"
+              onClick={this.onRegister}
+              disabled={isLoading}
+            >
+              Register
+            </button>
+
+            {showError && <p className="error-msg">*{errorMsg}</p>}
+          </form>
+        </div>
+
       </div>
     )
   }
