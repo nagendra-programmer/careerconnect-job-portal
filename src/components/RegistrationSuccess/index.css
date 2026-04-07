@@ -1,0 +1,64 @@
+.register-success-bg-container{
+    display:flex; 
+    justify-content:center; 
+    align-items:center;
+    height:100vh;
+    background-image:linear-gradient(to left,black,rgb(12, 2, 46),black);
+}
+
+.register-success-card{
+    width:50%;
+    max-width:450px; 
+    margin:auto; 
+    text-align:center;
+    background-image: linear-gradient(to right,black,rgb(3, 45, 51),black);
+    border:1px solid white; 
+    padding:20px; 
+    border-radius:7px; 
+}
+
+.register-success-heading{
+    color:rgb(66, 225, 143); 
+    font-family:'roboto'; 
+    font-size:16px; 
+    font-weight:bold; 
+    padding-bottom:20px; 
+}
+
+.register-success-icon{
+    height:50px; 
+    width:50px; 
+    border-radius:25px; 
+    background-color:white;
+    color:rgb(61, 218, 61); 
+    margin-top:10px; 
+}
+
+.back-to-login-button{
+    height:35px; 
+    width:50%; 
+    max-width:200px;
+    background-color:aqua; 
+    border-radius:5px; 
+    border:none; 
+    color:black; 
+    font-size:16px; 
+    padding:5px; 
+    text-align:center; 
+    cursor:pointer; 
+}
+
+@media screen and (min-width:768px){
+    .register-success-icon{
+        height:100px; 
+        width:100px; 
+        border-radius:50px; 
+    }
+
+    .register-success-heading{
+        font-size:24px;   
+    }
+
+   
+}
+

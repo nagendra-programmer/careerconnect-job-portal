@@ -1,0 +1,48 @@
+.applied-job-card {
+  background-color: #202020;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.applied-job-link {
+  text-decoration: none;
+  color: white;
+}
+
+/* HEADER */
+.applied-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.applied-logo {
+  width: 45px;
+  height: 45px;
+}
+
+.applied-title {
+  font-size: 16px;
+}
+
+/* DETAILS */
+.applied-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.applied-salary {
+  font-weight: bold;
+}
+
+/* MOBILE FIX */
+@media (max-width: 576px) {
+  .applied-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

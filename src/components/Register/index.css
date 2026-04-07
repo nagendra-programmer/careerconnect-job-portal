@@ -1,0 +1,118 @@
+.register-page-main-container {
+    background-color:black;
+    min-height: 100vh;
+}
+
+
+.register-page-logo-container {
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(10, 15, 109);
+    border-bottom:1px solid cyan; 
+}
+
+.register-logo {
+    width: 80px; 
+}
+
+
+.register-form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.register-input-fields-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+
+.register-page-label {
+    font-size: 18px;
+    font-family: 'roboto';
+    color: rgb(79, 210, 236);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* INPUT */
+.register-input-field {
+    padding: 15px;
+    border: 2px solid rgb(112, 19, 199);
+    border-radius: 5px;
+    width: 90%;
+}
+
+/* ERROR */
+.err-msg {
+    color: red;
+    font-size: 14px;
+    font-family: "roboto";
+    min-height: 20px;
+}
+
+/* BUTTON */
+.register-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.register-button {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'roboto';
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+
+.server-err-msg {
+    color: red;
+    font-size: 16px;
+    font-family: "roboto";
+    text-align: center;
+  
+    padding-bottom:10px; 
+}
+
+.register-loader{
+    display:flex; 
+    justify-content:center;
+    align-items:center; 
+}
+
+
+/* TABLET & DESKTOP */
+
+
+@media (min-width: 768px) {
+
+    .register-form {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .register-input-fields-container {
+        margin: 15px;
+    }
+
+    .register-logo {
+        width: 100px; 
+    }
+}
+

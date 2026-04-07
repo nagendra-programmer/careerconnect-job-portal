@@ -1,0 +1,134 @@
+/* MAIN CONTAINER */
+.saved-jobs-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* PAGE CONTAINER */
+.saved-jobs-container {
+  flex-grow: 1;
+  background-color: black;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;   
+  overflow: hidden;        
+}
+
+/* TOP BAR */
+.saved-jobs-count-bar {
+  padding: 10px 20px;
+  background-color: rgb(24, 4, 77);
+  font-family: 'roboto';
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  padding-right:70px; 
+}
+
+/* LABEL */
+.saved-jobs-label {
+  font-size: 18px;
+  padding-right: 5px;
+}
+
+/* COUNT BADGE */
+.saved-jobs-count {
+  background-color: aqua;
+  color: black;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+/* CLEAR BUTTON */
+.clear-saved-jobs-button {
+  border: none;
+  border-radius: 5px;
+  font-family: 'roboto';
+  height: 30px;
+  width: 80px;
+  background-color: rgb(199, 121, 121);
+  cursor: pointer;
+  color: white;
+}
+
+/* JOB LIST (SCROLLABLE PART) */
+.saved-jobs-list {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0;
+  flex-grow: 1;         
+  overflow: auto;     
+}
+
+/* LOADER CENTER */
+.saved-jobs-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* EMPTY STATE */
+.empty-saved-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.empty-card {
+  background-color: #202020;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+  border: 1px solid rgb(119, 29, 204);
+}
+
+.explore-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #00e7ff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-container {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  color:black;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  background-color: #555;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: #ff4d4d;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}

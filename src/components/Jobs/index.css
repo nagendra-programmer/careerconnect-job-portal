@@ -1,0 +1,117 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+/* BODY */
+.page-body {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;   /* 🔥 no page scroll */
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 25%;
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* PROFILE */
+.profile-section {
+  flex-shrink: 0;
+}
+
+/* FILTERS SCROLL */
+.filters-section {
+  flex-grow: 1;
+  overflow: auto;   /* 🔥 scroll here */
+}
+
+/* JOBS SIDE */
+.jobs-content {
+  width: 75%;
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* SEARCH BAR */
+.search-container {
+  display: flex;
+  margin-bottom: 15px;
+  flex-shrink: 0;   /* 🔥 fixed */
+}
+
+.search-container input {
+  flex-grow: 1;
+  padding: 8px;
+  background-color: #121212;
+  border: 1px solid #6366f1;
+  color: white;
+}
+
+.search-container button {
+  padding: 8px 12px;
+  background-color: #202020;
+  border: 1px solid #6366f1;
+  color: white;
+  cursor: pointer;
+}
+
+/* JOB LIST SCROLL */
+.jobs-list-container {
+  flex-grow: 1;
+  overflow: auto;  
+}
+
+/* FILTERS */
+.filter-heading {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.filters-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.filters-list li {
+  margin-bottom: 10px;
+}
+
+/* STATES */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.failure-container,
+.no-jobs-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.jobs-list{
+  list-style-type: none;
+  padding-left:0px; 
+  flex-direction: column;
+   
+}

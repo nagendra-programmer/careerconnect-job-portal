@@ -1,0 +1,43 @@
+.profile-card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  padding: 20px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ICON CONTAINER */
+.profle-image-container {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+
+  background-color: #202020;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ICON */
+.profile-icon {
+  color: white;
+  font-size: 30px;
+}
+
+/* TEXT */
+.user-name {
+  font-size: 18px;
+  margin: 0;
+  color: #000;
+}
+
+.user-email {
+  margin: 0;
+  color: blue;
+  font-size: 14px;
+}
