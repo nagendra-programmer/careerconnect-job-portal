@@ -9,7 +9,11 @@
 
 ## Live Demo
 
-[View Live Application](https://careerconnect-job-portal.vercel.app)
+Frontend (Vercel)  
+https://careerconnect-job-portal.vercel.app/
+
+Backend API (Render)  
+https://careerconnect-backend-gx9j.onrender.com
 
 ---
 
