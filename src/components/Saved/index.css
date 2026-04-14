@@ -132,3 +132,12 @@
   color: white;
   cursor: pointer;
 }
+
+.saved-jobs-page-server-error-msg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;       
+  height: 100%;             
+  text-align: center;
+}

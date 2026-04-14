@@ -23,10 +23,7 @@ const Saved=(props)=>{
 
     const jwtToken=Cookies.get('jwt_token')
 
-    
-    useEffect(()=>{
-
-        const getSavedJobs= async ()=>{
+     const getSavedJobs= async ()=>{
         setApiStatus(apiStatusContants.loading); 
 
         const url="https://careerconnect-backend-gx9j.onrender.com/saved-jobs"; 
@@ -57,8 +54,13 @@ const Saved=(props)=>{
     }
 
 
-    getSavedJobs(); 
+    useEffect(()=>{
+     getSavedJobs(); 
     },[jwtToken]);
+
+    const onRetry=()=>{
+        getSavedJobs(); 
+    }
 
     const onExploreJobs=()=>{
         const {history}=props 
@@ -89,44 +91,44 @@ const Saved=(props)=>{
     }
 
     const ClearPopup = () => (
-  <Popup
-    trigger={
-      <button className="clear-saved-jobs-button">
-        Clear
-      </button>
-    }
-    modal
-    position="center center"
-    overlayStyle={{ backdropFilter: "blur(6px)" }} 
-  >
-    {close => (
-      <div className="popup-container">
-        <p>Are you sure you want to delete all saved jobs?</p>
+        <Popup
+            trigger={
+            <button className="clear-saved-jobs-button">
+                Clear
+            </button>
+            }
+            modal
+            position="center center"
+            overlayStyle={{ backdropFilter: "blur(6px)" }} 
+        >
+            {close => (
+            <div className="popup-container">
+                <p>Are you sure you want to delete all saved jobs?</p>
 
-        <div className="popup-buttons">
-          <button
-            onClick={() => {
-              close();
-            }}
-            className="cancel-btn"
-          >
-            No
-          </button>
+                <div className="popup-buttons">
+                <button
+                    onClick={() => {
+                    close();
+                    }}
+                    className="cancel-btn"
+                >
+                    No
+                </button>
 
-          <button
-            onClick={() => {
-              onClearSavedJobs();
-              close();
-            }}
-            className="confirm-btn"
-          >
-            Yes
-          </button>
-        </div>
-      </div>
-    )}
-  </Popup>
-);
+                <button
+                    onClick={() => {
+                    onClearSavedJobs();
+                    close();
+                    }}
+                    className="confirm-btn"
+                >
+                    Yes
+                </button>
+                </div>
+            </div>
+            )}
+        </Popup>
+    );
 
     const successView=()=>{
         if (jobsList.length === 0) {
@@ -168,9 +170,9 @@ const Saved=(props)=>{
 
     const failureView=()=>{
         return(
-            <div>
+            <div className="saved-jobs-page-server-error-msg-container">
                 <h1>Internal server Error</h1>
-                <button>Try again</button>
+                <button type="button" onClick={onRetry}>Try again</button>
             </div>
         )
     }

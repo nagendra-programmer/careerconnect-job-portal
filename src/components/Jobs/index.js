@@ -222,21 +222,19 @@ class Jobs extends Component {
   return (
       <div className="main-container">
 
-        {/* HEADER */}
         <Header />
 
-        {/* BODY */}
         <div className="page-body">
 
           {/* SIDEBAR */}
           <div className="sidebar">
 
-            {/* PROFILE (fixed) */}
+            {/* PROFILE */}
             <div className="profile-section">
               {this.renderProfileSection()}
             </div>
 
-            {/* FILTERS (scrollable) */}
+            {/* FILTERS */}
             <div className="filters-section">
 
               <hr />
@@ -282,10 +280,9 @@ class Jobs extends Component {
             </div>
           </div>
 
-          {/* JOBS SIDE */}
+          {/* JOBS */}
           <div className="jobs-content">
 
-            {/* SEARCH (fixed) */}
             <div className="search-container">
               <input
                 type="search"

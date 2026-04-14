@@ -45,7 +45,7 @@ const Applied = () => {
 
   useEffect(() => {
     getAppliedJobs()
-  }, [])
+  }, [jwtToken])
 
   const onRetry = () => {
     getAppliedJobs()
@@ -84,17 +84,21 @@ const Applied = () => {
   //  LOADING VIEW
   const loadingView = () => (
     <div className="empty-applied">
-      <h2>Loading...</h2>
+      <div className="failure-card">
+        <h2>Loading...</h2>
+      </div>
     </div>
-  )
+)
 
   //  FAILURE VIEW
   const failureView = () => (
     <div className="empty-applied">
-      <h2>Something went wrong</h2>
-      <button className="retry-btn" onClick={onRetry}>
-        Retry
-      </button>
+      <div className="failure-card">
+        <h2>Something went wrong</h2>
+        <button className="retry-btn" onClick={onRetry}>
+          Retry
+        </button>
+      </div>
     </div>
   )
 
