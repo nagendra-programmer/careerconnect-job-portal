@@ -1,4 +1,6 @@
 import {useEffect, useState} from 'react'
+import {ThreeDots} from 'react-loader-spinner'
+
 import Cookies from 'js-cookie'
 import Header from '../Header'
 import AppliedJobCard from '../AppliedJobCard'
@@ -83,12 +85,15 @@ const Applied = () => {
 
   //  LOADING VIEW
   const loadingView = () => (
-    <div className="empty-applied">
-      <div className="failure-card">
-        <h2>Loading...</h2>
-      </div>
+    <div className="applied-loader">
+      <ThreeDots
+        height="50"
+        width="50"
+        color="#ffffff"
+        visible={true}
+      />
     </div>
-)
+  )
 
   //  FAILURE VIEW
   const failureView = () => (

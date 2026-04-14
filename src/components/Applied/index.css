@@ -1,12 +1,12 @@
 .applied-container {
-  background-color: black;
-  color: white;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  
+  background-color: black;
+  color: white;
 }
 
-/* TOP BAR */
+
 .applied-count-bar {
   display: flex;
   justify-content: flex-end;
@@ -30,7 +30,7 @@
   font-weight: bold;
 }
 
-/* LIST */
+
 .applied-list {
   list-style-type: none;
   padding: 15px;
@@ -40,7 +40,7 @@
   overflow-y: auto;
 }
 
-/* EMPTY + LOADING */
+
 .empty-applied,
 .empty-applied-container {
   flex-grow: 1;
@@ -49,7 +49,7 @@
   align-items: center;
 }
 
-/* EMPTY CARD */
+
 .empty-card {
   background-color: #202020;
   padding: 20px;
@@ -86,22 +86,17 @@
   flex-direction: column;
 }
 
-/* now this takes only remaining space */
-.applied-container {
-  flex-grow: 1;
-
-  background-color: black;
-  color: white;
-
-  display: flex;
-  flex-direction: column;
-}
-
 .failure-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  width: 90%;           
+  max-width: 320px;       
+  text-align: center; 
+  background-color: #202020;  
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .retry-btn {
@@ -115,4 +110,11 @@
 
 .retry-btn:hover {
   background-color: #1d4ed8;
+}
+
+.applied-loader {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
