@@ -1,8 +1,6 @@
 .applied-container {
   background-color: black;
   color: white;
-  height: 90vh;
-
   display: flex;
   flex-direction: column;
   

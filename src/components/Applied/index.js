@@ -45,7 +45,7 @@ const Applied = () => {
 
   useEffect(() => {
     getAppliedJobs()
-  }, [jwtToken])
+  }, [])
 
   const onRetry = () => {
     getAppliedJobs()

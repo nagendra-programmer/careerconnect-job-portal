@@ -21,10 +21,12 @@ const Saved=(props)=>{
     const[apiStatus,setApiStatus]=useState(apiStatusContants.initial); 
     const[jobsList,setJobsList]=useState([]); 
 
-    const jwtToken=Cookies.get('jwt_token')
+    
 
      const getSavedJobs= async ()=>{
         setApiStatus(apiStatusContants.loading); 
+
+        const jwtToken=Cookies.get('jwt_token')
 
         const url="https://careerconnect-backend-gx9j.onrender.com/saved-jobs"; 
         const options={
@@ -56,7 +58,7 @@ const Saved=(props)=>{
 
     useEffect(()=>{
      getSavedJobs(); 
-    },[jwtToken]);
+    },[]);
 
     const onRetry=()=>{
         getSavedJobs(); 
