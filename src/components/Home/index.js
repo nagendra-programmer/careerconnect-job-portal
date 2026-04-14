@@ -4,8 +4,9 @@ import Header from '../Header'
 import './index.css'
 
 const Home = () => (
-  <>
+  <div className="home-page">  
     <Header />
+
     <div className="home-container">
       <div className="home-content">
         <h1 className="home-heading">Find The Job That Fits Your Life</h1>
@@ -22,7 +23,7 @@ const Home = () => (
         </Link>
       </div>
     </div>
-  </>
+  </div>
 )
 
 export default Home

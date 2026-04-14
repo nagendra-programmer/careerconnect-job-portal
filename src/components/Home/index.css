@@ -1,6 +1,19 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.home-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .home-container {
+  flex-grow: 1;                
+  overflow-y: auto;            
+
   background-color: #000000;
-  min-height: 90vh;
   background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
   background-size: cover;
   padding: 40px;
@@ -14,6 +27,7 @@
 
 .home-content {
   max-width: 600px;
+  margin-top: 60px;
 }
 
 .home-heading {
@@ -41,3 +55,4 @@
 .find-jobs-button:hover{
   background-color:#64c5db;
 }
+
