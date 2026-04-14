@@ -37,3 +37,7 @@
   cursor: pointer;
   border-radius:4px; 
 }
+
+.find-jobs-button:hover{
+  background-color:#64c5db;
+}
