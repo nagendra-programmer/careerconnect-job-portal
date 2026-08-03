@@ -96,15 +96,14 @@
   background-color: blue;
   color: #ffffff;
   padding: 10px;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   margin: 10px 0;
   border-radius: 5px;
-  transition: 0.2s ease;
 }
 
 .login-button:hover {
-  border: 1px solid rgb(107, 197, 217);
+  border-color: rgb(107, 197, 217);
 }
 
 .login-button:disabled {
@@ -117,4 +116,13 @@
   color: #ff0b37;
   font-size: 12px;
   margin-top: 8px;
+}
+
+.hosting-note {
+  color: #cbd5e1;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.5;
+  
 }

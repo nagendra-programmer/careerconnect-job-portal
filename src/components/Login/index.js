@@ -63,7 +63,7 @@ class Login extends Component {
       if (response.ok) {
         this.onSubmitSuccess(data.jwt_token)
       } else {
-        this.onSubmitFailure(data.err_msg)
+        this.onSubmitFailure("Server is waking up... please try again")
         this.setState({isLoading: false})
       }
     } catch (error) {
@@ -151,6 +151,11 @@ class Login extends Component {
           </form>
         </div>
 
+        <p className="hosting-note">
+          Note: This application is hosted on a free server. The first request may
+          take 20–60 seconds while the server wakes up.
+        </p>
+        
       </div>
     )
   }
