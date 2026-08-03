@@ -41,39 +41,63 @@ class Login extends Component {
   }
 
   onSubmitForm = async event => {
-    event.preventDefault()
-    this.setState({isLoading: true})
+  event.preventDefault()
 
-    const {username, password} = this.state
+  const {username, password} = this.state
 
-    try {
-      const response = await fetch(
-        "https://careerconnect-backend-gx9j.onrender.com/auth/login",
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({username, password}),
-        }
-      )
+  // Frontend validation
+  if (username.trim() === '' || password.trim() === '') {
+    this.setState({
+      showError: true,
+      errorMsg: 'Username and Password are required',
+      isLoading: false,
+    })
+    return
+  }
 
-      const data = await response.json()
+  this.setState({
+    isLoading: true,
+    showError: false,
+    errorMsg: '',
+  })
 
-      if (response.ok) {
-        this.onSubmitSuccess(data.jwt_token)
-      } else {
-        this.onSubmitFailure("Server is waking up... please try again")
-        this.setState({isLoading: false})
-      }
-    } catch (error) {
+  try {
+    const response = await fetch(
+      'https://careerconnect-backend-gx9j.onrender.com/auth/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, password}),
+      },
+    )
+
+    const data = await response.json()
+
+    if (response.ok) {
+      this.onSubmitSuccess(data.jwt_token)
+    } else {
+      const errorMessage =
+        response.status >= 500
+          ? 'Server is waking up... Please wait a few seconds and try again.'
+          : data.err_msg
+
       this.setState({
         showError: true,
-        errorMsg: "Server is waking up... please try again",
+        errorMsg: errorMessage,
         isLoading: false,
       })
     }
+  } catch (error) {
+    this.setState({
+      showError: true,
+      errorMsg:
+        'Unable to connect to the server. Please try again in a few seconds.',
+      isLoading: false,
+    })
   }
+}
 
   onRegister = () => {
     const {history} = this.props
@@ -91,11 +115,12 @@ class Login extends Component {
     return (
       <div className="login-page">
 
-        {/* 🔹 DEMO CARD */}
+        {/* DEMO CARD */}
         <div className="demo-card">
           <h3>Demo Credentials</h3>
           <p><strong>Username:</strong> guru</p>
           <p><strong>Password:</strong> 123456789</p>
+
           <button
             type="button"
             className="demo-btn"
@@ -135,7 +160,7 @@ class Login extends Component {
               className="login-button"
               disabled={isLoading}
             >
-              {isLoading ? "Loading..." : "Login"}
+              {isLoading ? 'Loading...' : 'Login'}
             </button>
 
             <button
@@ -147,15 +172,15 @@ class Login extends Component {
               Register
             </button>
 
+            <p className="hosting-note">
+              Note: This application is hosted on a free server. The first
+              request may take 20–60 seconds while the server wakes up.
+            </p>
+
             {showError && <p className="error-msg">*{errorMsg}</p>}
           </form>
         </div>
 
-        <p className="hosting-note">
-          Note: This application is hosted on a free server. The first request may
-          take 20–60 seconds while the server wakes up.
-        </p>
-        
       </div>
     )
   }
